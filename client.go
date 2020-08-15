@@ -7,7 +7,7 @@ import (
 	utls "github.com/refraction-networking/utls"
 )
 
-func NewCClient(clientHello utls.ClientHelloID, proxyUrl ...string) (http.Client, error) {
+func NewClient(clientHello utls.ClientHelloID, proxyUrl ...string) (http.Client, error) {
 	if len(proxyUrl) > 0 {
 		dialer, err := newConnectDialer(proxyUrl[0])
 		if err != nil {

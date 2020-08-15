@@ -25,12 +25,9 @@ func readAndClose(r io.ReadCloser) ([]byte, error) {
 
 const Chrome83Hash = "b32309a26951912be7dba376398abc3b"
 
-func TestCClient_JA3(t *testing.T) {
-	client, err := NewCClient(tls.HelloChrome_83)
-	if err != nil {
-		t.Fatal(err)
-	}
+var client, _ = NewClient(tls.HelloChrome_83) // cannot throw an error because there is no proxy
 
+func TestCClient_JA3(t *testing.T) {
 	resp, err := client.Get("https://ja3er.com/json")
 	if err != nil {
 		t.Fatal(err)
@@ -51,11 +48,6 @@ func TestCClient_JA3(t *testing.T) {
 }
 
 func TestCClient_HTTP2(t *testing.T) {
-	client, err := NewCClient(tls.HelloChrome_83)
-	if err != nil {
-		t.Fatal(err)
-	}
-
 	resp, err := client.Get("https://www.google.com")
 	if err != nil {
 		t.Fatal(err)
