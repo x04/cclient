@@ -43,7 +43,7 @@ func TestCClient_JA3(t *testing.T) {
 	}
 
 	if ja3Response.JA3Hash != Chrome83Hash {
-		t.Error("unexpected JA3 hash; expected: b32309a26951912be7dba376398abc3b | got:", ja3Response.JA3Hash)
+		t.Error("unexpected JA3 hash; expected:", Chrome83Hash, "| got:", ja3Response.JA3Hash)
 	}
 }
 
