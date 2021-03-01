@@ -1,6 +1,6 @@
 module github.com/x04/cclient
 
-go 1.15
+go 1.16
 
 require (
 	github.com/refraction-networking/utls v0.0.0-20200806014556-219d12d0a4a1
