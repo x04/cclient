@@ -1,4 +1,4 @@
-module github.com/x04/cclient
+module github.com/DILLON9999/cclient-redirect
 
 go 1.16
 
