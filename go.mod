@@ -1,4 +1,4 @@
-module github.com/DILLON9999/cclient-redirect
+module github.com/DILLON9999/cclient-redirect-timeout
 
 go 1.16
 
