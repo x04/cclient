@@ -6,11 +6,12 @@ import (
 	"errors"
 	"fmt"
 	"net"
-	"net/http"
 	"strings"
 	"sync"
 
-	"golang.org/x/net/http2"
+	http "github.com/useflyent/fhttp"
+
+	"github.com/useflyent/fhttp/http2"
 	"golang.org/x/net/proxy"
 
 	utls "github.com/refraction-networking/utls"
@@ -21,7 +22,7 @@ var errProtocolNegotiated = errors.New("protocol negotiated")
 type roundTripper struct {
 	sync.Mutex
 
-	clientHelloId     utls.ClientHelloID
+	clientHelloId utls.ClientHelloID
 
 	cachedConnections map[string]net.Conn
 	cachedTransports  map[string]http.RoundTripper
